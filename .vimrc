@@ -15,7 +15,7 @@ syntax on " syntax highlighting on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000 " How many lines of history to remember
 set cf " enable error files and error jumping
-" set clipboard+=unnamed " turns out I do like sharing windows clipboard
+set clipboard+=unnamed " turns out I do like sharing windows clipboard
 set ffs=unix,dos,mac " support all three, in this order
 set viminfo+=! " make sure it can save viminfo
 set isk+=_,$,@,%,# " none of these should be word dividers, so make them not be
@@ -132,9 +132,9 @@ let b:match_ignorecase = 1
 let perl_extended_vars=1 " highlight advanced perl vars inside strings
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pathogen 
+" Pathogen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call pathogen#runtime_append_all_bundles() 
+call pathogen#runtime_append_all_bundles()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom Functions
@@ -157,7 +157,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Useful abbrevs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr> 
+iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
@@ -173,7 +173,7 @@ au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType xml set omnifunc=xmlcomplete#CompleteTags
 au FileType c set omnifunc=ccomplete#Complete
-
+autocmd Filetype gitcommit setlocal spell textwidth=72
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change paging overlap amount from 2 to 5 (+3)
 " if you swapped C-y and C-e, and set them to 2, it would
@@ -181,3 +181,35 @@ au FileType c set omnifunc=ccomplete#Complete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-f> <C-f>3<C-y> "  Make overlap 3 extra on control-f
 nnoremap <C-b> <C-b>3<C-e> "  Make overlap 3 extra on control-b
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+"syntax on
+
+" Appearance
+syntax on                                       " turn on syntax highlighting
+set t_Co=256                                    " use 256 colors
+set background=dark                             " dark background
+let g:seoul256_background = 235
+let g:solarized_termcolors = 256
+"colorscheme solarized                           " and seoul256 as default theme
+colorscheme atom-dark
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NerdTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    map <C-e> <plug>NERDTreeTabsToggle<CR>
+    map <C-n> :NERDTreeToggle<CR>
+
+    map <leader>e :NERDTreeFind<CR>
+    nmap <leader>nt :NERDTreeFind<CR>
+
+    let NERDTreeShowBookmarks=1
+    let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+    let NERDTreeChDirMode=0
+    let NERDTreeQuitOnOpen=1
+    let NERDTreeMouseMode=2
+    let NERDTreeShowHidden=1
+    let NERDTreeKeepTreeInNewTab=1
+    let g:nerdtree_tabs_open_on_gui_startup=0
+

@@ -128,10 +128,10 @@ symlinkifne .zlogout
 symlinkifne .zprofile
 symlinkifne .zshenv
 symlinkifne .zshrc
-symlinkifne .ssh
+symlinkifne .tmux.conf
 
 popd > /dev/null 2>&1
 
-# ./osx.sh
+./osx.sh
 
 bot "Woot! All done."
