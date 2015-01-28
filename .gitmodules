@@ -4,3 +4,27 @@
 [submodule "z-zsh"]
 	path = z-zsh
 	url = git://github.com/sjl/z-zsh.git
+[submodule "HTML-AutoCloseTag"]
+  path = .vim/bundle/HTML-AutoCloseTag
+  url = git://github.com/vim-scripts/HTML-AutoCloseTag.git
+[submodule "ctrlp.vim"]
+  path = .vim/bundle/ctrlp.vim
+  url = git://github.com/kien/ctrlp.vim.git
+[submodule "nerdcommenter"]
+  path = .vim/bundle/nerdcommenter
+  url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "nerdtree"]
+  path = .vim/bundle/nerdtree
+  url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim-css3-syntax"]
+  path = .vim/bundle/vim-css3-syntax
+  url = git://github.com/hail2u/vim-css3-syntax.git
+[submodule "vim-javascript-syntax"]
+  path = .vim/bundle/vim-javascript-syntax
+  url = git://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim-rails"]
+  path = .vim/bundle/vim-rails
+  url = git://github.com/tpope/vim-rails.git
+[submodule "vim-surround"]
+  path = .vim/bundle/vim-surround
+  url = git://github.com/tpope/vim-surround.git

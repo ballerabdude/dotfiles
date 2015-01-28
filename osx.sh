@@ -20,7 +20,7 @@ running "checking homebrew install"
 brew_bin=$(which brew) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
 	action "installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     if [[ $? != 0 ]]; then
     	error "unable to install homebrew, script $0 abort!"
     	exit -1
@@ -60,11 +60,11 @@ bot "installing homebrew command-line tools"
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-require_brew coreutils
+#require_brew coreutils
 # Install some other useful utilities like `sponge`
-require_brew moreutils
+#require_brew moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-require_brew findutils
+#require_brew findutils
 
 # Install Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
@@ -88,9 +88,9 @@ require_brew dos2unix
 # require_brew fig
 # fortune command--I source this as a better motd :)
 require_brew fortune
-require_brew gawk
+#require_brew gawk
 # http://www.lcdf.org/gifsicle/ (because I'm a gif junky)
-require_brew gifsicle
+#require_brew gifsicle
 # skip those GUI clients, git command-line all the way
 require_brew git
 # yes, yes, use git-flow, please :)
@@ -104,7 +104,7 @@ require_brew gnu-sed --default-names
 require_brew homebrew/dupes/grep
 require_brew hub
 require_brew imagemagick
-require_brew imagesnap
+#require_brew imagesnap
 # jq is a JSON grep
 require_brew jq
 # http://maven.apache.org/
@@ -172,7 +172,7 @@ bot "Don't worry you can always comeback and run the osx.sh"
 read -r -p "Do you want more then the basics? [Y|n] " response
 
 if [[ $response =~ ^(yes|y|Y) ]];then
-    
+
     ###############################################################################
     # Native Apps (via brew cask)                                                 #
     ###############################################################################

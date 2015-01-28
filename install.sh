@@ -14,6 +14,11 @@ if [[ ! -e ~/.dotfiles_backup ]]; then
     mkdir ~/.dotfiles_backup
 fi
 
+# create an ssh folder if its not there
+if [[ ! -e ~/.ssh ]]; then
+    mkdir ~/.ssh
+fi
+
 bot "Hi. I'm going to make your OSX system better. But first, I need to configure this project based on your info so you don't check in files to github as Adam Eivy from here on out :)"
 
 fullname=`osascript -e "long user name of (system info)"`
