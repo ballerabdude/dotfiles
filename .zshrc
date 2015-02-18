@@ -27,7 +27,7 @@ plugins=(git brew github osx rvm compleat dirpersist gem git-flow ssh-agent clou
 source $ZSH/oh-my-zsh.sh
 
 source ~/.nvm/nvm.sh
-
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 # Customize to your needs...
 unsetopt correct
 

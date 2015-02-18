@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
-#file="~/.gitshots/#{Time.now.to_i}.jpg"
+file="~/.gitshots/#{Time.now.to_i}.jpg"
 unless File.directory?(File.expand_path("../../rebase-merge", __FILE__))
-  #puts "Taking capture into #{file}!"
-  puts "Here is your fortune good job at commiting!"
-  #system "imagesnap -q -w 3 #{file} &"
-  system "fortune"
+  puts "Taking capture into #{file}!"
+  #puts "Here is your fortune good job at commiting!"
+  system "imagesnap -q -w 3 #{file} &"
+  # system  "curl -X POST -F user[fname]=Mark -F user[lname]=Bates -F foo=bar \
+  #   -F user[photo]=#{file} qui-1228.herokuapp.com/echo
+  #   -H "Accept: application/json""
+  #system "fortune"
 end
 exit 0
