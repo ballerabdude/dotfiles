@@ -85,7 +85,11 @@ module.exports = {
     'spotify',
     'cyberduck',
     'postman',
-    'firefox'
+    'firefox',
+    'skitch',
+    'jetbrains-toolbox',
+    'alfred',
+    'robo-3t'
   ],
   gem: [
   ],
