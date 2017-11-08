@@ -1,11 +1,31 @@
 #!/bin/sh
 
+#########################################
+# Commands to change dirs
+alias to.work='cd ${DEVCODE}'
+alias to.downloads='cd ${MYDOWNLOADS}'
+alias to.dotfiles='cd ${DOTFILES}'
+alias to.docs='cd ${MYDOCUMENTS}'
+alias to.mycode='cd ${MYCODE}'
+alias to.opensource='cd ${OPENSOURCE}'
+alias to.go='cd /Users/abdulhagi/Go/src/'
+alias to.chef='cd ${CHEF}'
+alias to.dropboxDevWork='cd ${DROPBOXDEVWORK}'
+alias to.SyncCode='cd ${SYNCCODE}'
+alias to.ZeusFront='cd ${ZEUSFRONTEND}'
+
 #################################
 # Simple Program Name Shortening
 alias g=git
 
 #############################
 # Utilities
+
+alias run-dotfile='. ~/.dotfiles/install.sh'
+
+alias get='g clone $1 ${MYCODE}'
+
+alias get='function _get(){ g clone $1 ${MYCODE}; };_get'
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"

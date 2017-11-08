@@ -37,6 +37,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 source /usr/local/opt/nvm/nvm.sh
 
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 autoload -U add-zsh-hook
 load-nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then

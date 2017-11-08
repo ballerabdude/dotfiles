@@ -6,8 +6,9 @@ bindkey -v
 # Temporary aliases useful for demos, other current projects
 #########################################################################
 export MYTEMP=~/Documents/Temp
-export MYCODE=~/Documents/Code
-export MYSCRATCH=~/Documents/Temp/Scratch
+export DOTFILES=~/.dotfiles
+export MYCODE=~/Documents/dev_work
+export CHEF=~/Documents/dev_work/chef
 export MYDOWNLOADS=~/Downloads
 export MYDOCUMENTS=~/Documents
 export MYDEVAPPS=/Applications/Dev

@@ -1,9 +1,9 @@
 [user]
-  name = GITHUBFULLNAME
-  email = GITHUBEMAIL
+  name = Abdul Hagi
+  email = muridiv.1@gmail.com
 [github]
   # https://github.com/blog/180-local-github-config
-  user = GITHUBUSER
+  user = ballerabdude
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -169,7 +169,7 @@
   keepBackup = false
 
 [merge]
-  tool = vimdiff
+  tool = diffmerge
   # Always show a diffstat at the end of a merge
   stat = true
   conflictstyle = diff3
