@@ -6,6 +6,7 @@
 ###########################
 
 # include my library helpers for colorized echo and require_brew, etc
+source ./lib_sh/utils.sh
 source ./lib_sh/echos.sh
 source ./lib_sh/requirers.sh
 
@@ -154,8 +155,8 @@ install_package "fontconfig" "fontconfig"
 install_package "ZSH" "zsh"
 # update ruby to latest
 # use versions of packages installed with homebrew
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline` --with-libyaml-dir=`brew --prefix libyaml`"
-require_brew ruby
+#RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline` --with-libyaml-dir=`brew --prefix libyaml`"
+install_package "ruby" "ruby"
 # set zsh as the user login shell
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
 if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
@@ -229,6 +230,12 @@ require_nvm stable
 # always pin versions (no surprises, consistent dev/build machines)
 npm config set save-exact true
 
+if [[ ! -d "~/.pyenv" ]]; then
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+  git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
+fi
+
+
 #####################################
 # Now we can switch to node.js mode
 # for better maintainability and
@@ -241,7 +248,7 @@ npm install
 ok
 
 # bot "installing packages from config.js..."
-# node index.js
+node index-ubuntu.js
 # ok
 
 bot "Woot! All done. You may want to restart you terminal now."
