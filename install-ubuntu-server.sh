@@ -226,7 +226,7 @@ fi
 # always pin versions (no surprises, consistent dev/build machines)
 npm config set save-exact true
 
-if [[ ! -d "~/.pyenv" ]]; then
+if [[ ! -d "$HOME/.pyenv" ]]; then
   git clone https://github.com/yyuu/pyenv.git ~/.pyenv
   git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
 fi
