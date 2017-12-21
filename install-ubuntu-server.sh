@@ -8,7 +8,6 @@
 # include my library helpers for colorized echo and require_brew, etc
 source ./lib_sh/utils.sh
 source ./lib_sh/echos.sh
-source ./lib_sh/requirers.sh
 
 bot "Hi! I'm going to install tooling and tweak your system settings. Here I go..."
 
@@ -163,7 +162,7 @@ if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
   bot "setting newer homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
   # sudo bash -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
   # chsh -s /usr/local/bin/zsh
-  sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
+  # sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
   ok
 fi
 
@@ -222,10 +221,7 @@ if [[ -d "/Library/Ruby/Gems/2.0.0" ]]; then
 fi
 
 # node version manager
-bash -c "$(wget -qO - https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh)"
-
-# nvm
-require_nvm stable
+./ubuntu/nvm.sh
 
 # always pin versions (no surprises, consistent dev/build machines)
 npm config set save-exact true
@@ -248,7 +244,7 @@ npm install
 ok
 
 # bot "installing packages from config.js..."
-node index-ubuntu.js
+# node index-ubuntu.js
 # ok
 
 bot "Woot! All done. You may want to restart you terminal now."
