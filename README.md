@@ -58,7 +58,7 @@ Don't you hate getting a new laptop or joining a new team and then spending a wh
 
 When I finish with your machine, you will be able to look at your command-line in full-screen mode like this (running iTerm):
 
-![iTerm Screenshot](https://raw.githubusercontent.com/atomantic/dotfiles/master/img/term.png)
+![iTerm Screenshot](https://raw.githubusercontent.com/ballerabdude/dotfiles/master/img/term.png)
 
 Check out how your shell prompt includes the full path, node.js version & the working git branch along with a lot of other info!
 We use powerlevel9k for command prompt, so customization of what you want is easily changable in `./.zshrc`
