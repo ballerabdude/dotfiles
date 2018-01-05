@@ -27,6 +27,9 @@ alias get='g clone $1 ${MYCODE}'
 
 alias get='function _get(){ g clone $1 ${MYCODE}; };_get'
 
+alias start-ml='aws ec2 start-instances --instance-ids i-00c8bc5081c23c4e7 --region us-east-1 --profile aws-digital-sandbox'
+alias stop-ml='aws ec2 stop-instances --instance-ids i-00c8bc5081c23c4e7 --region us-east-1 --profile aws-digital-sandbox'
+
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 

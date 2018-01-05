@@ -53,7 +53,14 @@ module.exports = {
     'pyenv-virtualenv',
     'yarn',
     'mediainfo',
-    'ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-frei0r --with-libass --with-libvo-aacenc --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-opus --with-openssl --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-tools --with-x265 --with-faac --with-lame --with-x264 --with-xvid'
+    'packer',
+    'ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-frei0r --with-libass --with-libvo-aacenc --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-opus --with-openssl --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-tools --with-x265 --with-faac --with-lame --with-x264 --with-xvid',
+    'md5sha1sum',
+    'fdupes',
+    'cmake',
+    'mongodb',
+    'redis',
+    'mp4box'
   ],
   cask: [
     //'adium',
@@ -62,7 +69,7 @@ module.exports = {
     // 'box-sync',
     //'comicbooklover',
     'diffmerge',
-    //'dropbox',
+    'dropbox',
     //'evernote',
     'gpgtools',
     //'ireadfast',

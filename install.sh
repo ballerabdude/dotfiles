@@ -293,6 +293,9 @@ osascript -e 'tell application "System Preferences" to quit'
 ok
 
 
+git clone git://github.com/concordusapps/pyenv-implict.git ~/.pyenv/plugins/pyenv-implict
+
+
 ###############################################################################
 bot "Terminal & iTerm2"
 ###############################################################################
