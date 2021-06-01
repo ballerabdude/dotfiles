@@ -1,0 +1,40 @@
+#!/bin/sh
+
+#########################################
+# Commands to change dirs
+alias to.work='cd ${DEVCODE}'
+alias to.downloads='cd ${MYDOWNLOADS}'
+alias to.dotfiles='cd ${DOTFILES}'
+alias to.docs='cd ${MYDOCUMENTS}'
+alias to.mycode='cd ${MYCODE}'
+alias to.opensource='cd ${OPENSOURCE}'
+alias to.go='cd /Users/abdulhagi/Go/src/'
+alias to.chef='cd ${CHEF}'
+alias to.dropboxDevWork='cd ${DROPBOXDEVWORK}'
+alias to.SyncCode='cd ${SYNCCODE}'
+alias to.ZeusFront='cd ${ZEUSFRONTEND}'
+
+#################################
+# Simple Program Name Shortening
+alias g=git
+
+#############################
+# Utilities
+
+alias run-dotfile='. ~/.dotfiles/install'
+
+alias get='g clone $1 ${MYCODE}'
+
+alias get='function _get(){ g clone $1 ${MYCODE}; };_get'
+
+alias start-ml='aws ec2 start-instances --instance-ids i-00c8bc5081c23c4e7 --region us-east-1 --profile aws-digital-sandbox'
+alias stop-ml='aws ec2 stop-instances --instance-ids i-00c8bc5081c23c4e7 --region us-east-1 --profile aws-digital-sandbox'
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+alias l="ls -la"       # List in long format, include dotfiles
+alias ld="ls -ld */"   # List in long format, only directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
