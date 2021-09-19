@@ -154,7 +154,7 @@ brew_packages() {
     # addition taps to enable packages not included in core tap
     tap_list=""
     # term_list includes packages which run from terminal without GUI
-    term_list="wget antigen tmux gawk jq tldr ncdu tfenv azure-cli"
+    term_list="wget antigen tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm telnet"
     # cask_list includes packages macOS apps, fonts and plugins and other non-open source software
     cask_list=""
     term_message cb "\nAdding additional Homebrew taps..."

@@ -104,6 +104,7 @@ plugins=(
   osx
   npm
   nvm
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
