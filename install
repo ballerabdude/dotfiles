@@ -23,8 +23,6 @@ bot "I will be making you cool :)"
 bot "Installing Packages"
 
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
-# curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-# curl -fsSL -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 curl -fsSL -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 if [[ $OS == "Darwin" ]]; then
