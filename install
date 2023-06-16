@@ -2,17 +2,54 @@
 
 clear
 
+# if [[ $OS == "Darwin" ]]; then
+#   # Add future support for installing dependencies
+# elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
+#     # Add future support for installing dependencies
+      # sudo apt-get install build-essential procps curl file git
+# fi
+
+
+OS=$(uname -s)
+
 # include my library helpers for colorized echo and require_brew, etc
 source ./lib_sh/echos.sh
 
-bot "I will be making you mac cool :)"
+bot "I will be making you cool :)"
 
 #####
 # install homebrew (CLI Packages)
 #####
-bot "Running brewski to manage Homebrew packages"
-action "Would you like to run brewski"
-./mac-brewski.sh
+bot "Installing Packages"
+
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+# curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+# curl -fsSL -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+curl -fsSL -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+
+if [[ $OS == "Darwin" ]]; then
+  # Run commands for macOS:
+  export PATH=/opt/homebrew/bin:$PATH
+elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+brew doctor
+brew upgrade 
+
+if [[ $OS == "Darwin" ]]; then
+  # Run commands for macOS:
+  brew install wget tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm telnet k9s awscli
+elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
+  DISTRO=$(lsb_release -is)
+  if [ $DISTRO == "Ubuntu" ] || [ $DISTRO == "Debian" ] ; then
+    # Run commands for Ubuntu:
+    sudo apt-get update -y
+    sudo apt-get install -y dnsutils
+    brew install wget tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm k9s awscli
+  fi
+fi
+
 
 bot "creating symlinks for project dotfiles..."
 pushd homedir > /dev/null 2>&1
@@ -35,5 +72,7 @@ for file in .*; do
   ln -s ~/.dotfiles/homedir/$file ~/$file
   echo -en '\tlinked';ok
 done
+
+sudo chsh -s $(which zsh) $(whoami)
 
 popd > /dev/null 2>&1

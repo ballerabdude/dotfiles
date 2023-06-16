@@ -1,4 +1,4 @@
-source /usr/local/share/antigen/antigen.zsh
+source /.dotfiles/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -101,7 +101,6 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  osx
   npm
   nvm
   history-substring-search
@@ -138,3 +137,24 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+if [[ $OS == "Darwin" ]]; then
+  # Run commands for macOS:
+  export PATH=/opt/homebrew/bin:$PATH
+elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
+  DISTRO=$(lsb_release -is)
+  if [ $DISTRO == "Ubuntu" ] || [ $DISTRO == "Debian" ] ; then
+    # Run commands for Ubuntu:
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
+fi
