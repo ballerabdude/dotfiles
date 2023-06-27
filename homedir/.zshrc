@@ -1,4 +1,4 @@
-source /.dotfiles/antigen.zsh
+source ~/.dotfiles/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -158,3 +158,4 @@ elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
 fi
+######
