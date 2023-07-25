@@ -43,7 +43,7 @@ elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
   if [ $DISTRO == "Ubuntu" ] || [ $DISTRO == "Debian" ] ; then
     # Run commands for Ubuntu:
     sudo apt-get update -y
-    sudo apt-get install -y dnsutils unzip jq ffmpeg
+    sudo apt-get install -y dnsutils unzip jq ffmpeg lsof
     # brew install tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm k9s awscli
 
     sudo apt-get update -y; sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
