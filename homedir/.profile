@@ -6,4 +6,6 @@ source ~/.shellvars
 source ~/.shellfn
 source ~/.shellpaths
 source ~/.shellaliases
-source ~/.secret_shell_exports
+if [ -f ~/.secret_shell_exports ]; then
+    source ~/.secret_shell_exports
+fi

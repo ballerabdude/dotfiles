@@ -12,6 +12,9 @@ TFENV_ROOT="${HOME}/.tfenv"
 
 # Check if tfenv is already installed
 if [ -d "$TFENV_ROOT" ]; then
+    if ! grep -q 'export PATH="$HOME/.tfenv/bin:$PATH"' ~/.profile; then
+        echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.profile
+    fi
     echo "tfenv is already installed"
 else
     # Clone tfenv repository from GitHub
