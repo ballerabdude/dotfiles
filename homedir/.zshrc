@@ -1,5 +1,7 @@
 source ~/.dotfiles/antigen.zsh
 
+OS=$(uname -s)
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
