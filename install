@@ -22,6 +22,13 @@ bot "I will be making you cool :)"
 #####
 bot "Installing Packages"
 
+# Check for internet connection before continuing
+if ! curl -s --head https://www.google.com/ | grep "Connection established" > /dev/null; then
+  error "No internet connection. Please check your network settings."
+  exit 1
+fi
+
+
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 curl -fsSL -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
@@ -32,12 +39,21 @@ elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# before continuing, check to see if the user has the necessary dependencies
+bot "Checking for Homebrew and dependencies..."
+if ! type "brew" > /dev/null; then
+  error "I depend on Homebrew to install packages."
+  error "Please validate that it has been installed and run script again."
+  exit 1
+fi
+
 brew doctor
 brew upgrade 
 
 if [[ $OS == "Darwin" ]]; then
   # Run commands for macOS:
   brew install wget tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm telnet k9s awscli
+  brew install --cask iterm2 istat-menus jetbrains-toolbox docker diffmerge alfred
 elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
   DISTRO=$(lsb_release -is)
   if [ $DISTRO == "Ubuntu" ] || [ $DISTRO == "Debian" ] ; then
