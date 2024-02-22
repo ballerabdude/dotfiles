@@ -53,7 +53,7 @@ brew upgrade
 if [[ $OS == "Darwin" ]]; then
   # Run commands for macOS:
   brew install wget tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm telnet k9s awscli
-  brew install --cask iterm2 istat-menus jetbrains-toolbox docker diffmerge alfred
+  brew install --cask iterm2 istat-menus jetbrains-toolbox docker diffmerge alfred skitch
 elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
   DISTRO=$(lsb_release -is)
   if [ $DISTRO == "Ubuntu" ] || [ $DISTRO == "Debian" ] ; then
