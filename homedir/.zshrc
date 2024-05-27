@@ -143,12 +143,6 @@ source $ZSH/oh-my-zsh.sh
 if [[ $OS == "Darwin" ]]; then
   # Run commands for macOS:
   export PATH=/opt/homebrew/bin:$PATH
-elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
-  DISTRO=$(lsb_release -is)
-  if [ $DISTRO == "Ubuntu" ] || [ $DISTRO == "Debian" ] ; then
-    # Run commands for Ubuntu:
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
