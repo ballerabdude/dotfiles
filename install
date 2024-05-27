@@ -23,7 +23,7 @@ bot "I will be making you cool :)"
 bot "Installing Packages"
 
 # Check for internet connection before continuing
-if ! curl -s --head https://www.google.com/ | grep "Connection established" > /dev/null; then
+if ! curl -s --head https://www.google.com/ | grep "HTTP/2 200" > /dev/null; then
   error "No internet connection. Please check your network settings."
   exit 1
 fi
