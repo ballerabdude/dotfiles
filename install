@@ -30,27 +30,29 @@ fi
 
 
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
-curl -fsSL -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+
 
 if [[ $OS == "Darwin" ]]; then
+  curl -fsSL -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
   # Run commands for macOS:
   export PATH=/opt/homebrew/bin:$PATH
 elif [[ $OS == "Linux" ]] && [[ ! -z $(command -v lsb_release) ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-# before continuing, check to see if the user has the necessary dependencies
-bot "Checking for Homebrew and dependencies..."
-if ! type "brew" > /dev/null; then
-  error "I depend on Homebrew to install packages."
-  error "Please validate that it has been installed and run script again."
-  exit 1
-fi
 
-brew doctor
-brew upgrade 
 
 if [[ $OS == "Darwin" ]]; then
+  # before continuing, check to see if the user has the necessary dependencies
+  bot "Checking for Homebrew and dependencies..."
+  if ! type "brew" > /dev/null; then
+    error "I depend on Homebrew to install packages."
+    error "Please validate that it has been installed and run script again."
+    exit 1
+  fi
+
+  brew doctor
+  brew upgrade 
   # Run commands for macOS:
   brew install wget tmux gawk jq tldr ncdu tfenv azure-cli pyenv nvm telnet k9s awscli
   brew install --cask iterm2 istat-menus jetbrains-toolbox docker diffmerge alfred skitch
